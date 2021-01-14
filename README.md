@@ -47,3 +47,4 @@ Clones the repo, builds the site, and commits it back to the `gh-pages` branch o
 3. <https://github.com/BryanSchuetz/jekyll-deploy-gh-pages>
 4. <https://github.com/joshlarsen/jekyll4-deploy-gh-pages>
 5. <https://github.com/alexcvcoelho/jekyll-deploy-gh-pages>
+6. <https://github.com/David-Byrne/jekyll-diff-action>

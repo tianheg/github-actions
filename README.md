@@ -13,4 +13,5 @@
 7. <https://github.com/peaceiris/actions-gh-pages>
 8. <https://docs.github.com/en/free-pro-team@latest/actions>
 9. <https://docs.github.com/en/free-pro-team@latest/actions/reference/events-that-trigger-workflows>
-10. [GitHub Actions 入门教程 - 阮一峰的网络日志](http://www.ruanyifeng.com/blog/2019/09/getting-started-with-github-actions.html)
+10. <https://github.com/sdras/awesome-actions/blob/master/README.md#tutorials>
+11. [GitHub Actions 入门教程 - 阮一峰的网络日志](http://www.ruanyifeng.com/blog/2019/09/getting-started-with-github-actions.html)

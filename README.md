@@ -11,7 +11,7 @@ Deploy your Hugo site to GitHub Pages, via GitHub Actions, with Arch Linux.
 1. Generate SSH public/private key pair
 
    ```sh
-   ssh-keygen -t rsa -b 4096 -C "username@users.noreply.github.com"
+   ssh-keygen -t ed25519 -C "your_email@example.com"
    ```
 
 2. Add deploy key to GitHub Pages repository

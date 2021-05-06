@@ -5,7 +5,7 @@ set -e
 echo '' # see https://github.com/actions/toolkit/issues/168
 
 # Build vuepress project
-echo "==> Start building $BUILD_SCRIPT"
+echo "==> Start building \n $BUILD_SCRIPT"
 eval "$BUILD_SCRIPT"
 echo "Build success"
 

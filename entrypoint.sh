@@ -14,14 +14,14 @@ echo "==> Changing directory to '$BUILD_DIR' ..."
 cd $BUILD_DIR
 
 # Get respository
-if [[ -z "$TARGET_REPO" ]]; then
+if [ -z "$TARGET_REPO" ]; then
   REPOSITORY_NAME="${GITHUB_REPOSITORY}"
 else
   REPOSITORY_NAME="$TARGET_REPO"
 fi
 
 # Get branch
-if [[ -z "$TARGET_BRANCH" ]]; then
+if [ -z "$TARGET_BRANCH" ]; then
   DEPLOY_BRAN="gh-pages"
 else
   DEPLOY_BRAN="$TARGET_BRANCH"
@@ -54,7 +54,7 @@ fi
 echo "==> Starting deploying"
 
 # Final repository
-if [[ -z "$COMMIT_MESSAGE" ]]; then
+if [ -z "$COMMIT_MESSAGE" ]; then
   COMMIT_MESSAGE="Auto deploy from Github Actions"
 fi
 

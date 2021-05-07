@@ -9,7 +9,7 @@ LABEL "repository"="https://github.com/tianheg/github-actions/tree/vuepress"
 LABEL "homepage"="https://github.com/tianheg/github-actions/tree/vuepress"
 LABEL "maintainer"="tianheg"
 
-RUN apk add --no-cache git jq
+RUN apt-get update && apt-get install -y git jq
 
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x entrypoint.sh

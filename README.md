@@ -1,7 +1,7 @@
 # Push GitHub Actions
 
-```
-# push.yml
+```yaml
+# push.yaml
 jobs:
   build:
     runs-on: ubuntu-latest

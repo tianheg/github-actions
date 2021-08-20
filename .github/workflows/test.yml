@@ -1,0 +1,57 @@
+name: 'Test'
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - '**.md'
+  pull_request:
+    paths-ignore:
+      - '**.md'
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os:
+          - 'ubuntu-latest'
+          - 'ubuntu-18.04'
+          - 'macos-latest'
+          - 'windows-latest'
+    steps:
+      - uses: actions/checkout@v2.3.4
+
+      - name: Read .nvmrc
+        run: echo "::set-output name=NVMRC::$(cat .nvmrc)"
+        id: nvm
+
+      - name: Setup Node
+        uses: actions/setup-node@v2.4.0
+        with:
+          node-version: '${{ steps.nvm.outputs.NVMRC }}'
+
+      - run: npm ci
+
+      - name: Run prettier
+        if: ${{ startsWith(matrix.os, 'ubuntu-18.04') }}
+        run: npm run format:check
+
+      - name: Run eslint
+        if: ${{ startsWith(matrix.os, 'ubuntu-18.04') }}
+        run: npm run lint
+
+      - name: Run ncc
+        if: ${{ startsWith(matrix.os, 'ubuntu-18.04') }}
+        run: npm run build
+
+      - run: npm test
+
+      - name: Upload test coverage as artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: coverage-${{ matrix.os }}
+          path: coverage
+
+      - uses: codecov/codecov-action@v2.0.2

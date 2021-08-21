@@ -17,7 +17,9 @@ jobs:
       run: |
         git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
-        git commit -m "Add changes" -a
+        git commit -m "Add changes" -a || true
+        # The above command will fail if no changes were present, so we ignore
+        # the return code.
     - name: Push changes
       uses: tianheg/github-actions@push
       with:

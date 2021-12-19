@@ -20,4 +20,3 @@
 14. <https://docs.github.com/en/free-pro-team@latest/actions/reference/events-that-trigger-workflows>
 15. <https://github.com/sdras/awesome-actions/blob/master/README.md#tutorials>
 16. [GitHub Actions 入门教程 - 阮一峰的网络日志](http://www.ruanyifeng.com/blog/2019/09/getting-started-with-github-actions.html)
-17. <https://github.com/BlueskyClouds/My-Actions>

@@ -4,7 +4,7 @@
 # mail.yml
 
 - name: Send mail
-  uses: dawidd6/action-send-mail@v3
+  uses: tianheg/github-actions@mail
   with:
     # Required mail server address:
     server_address: smtp.gmail.com

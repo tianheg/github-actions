@@ -2,6 +2,9 @@
 
 ```yaml
 # push.yaml
+
+permissions: write-all
+
 jobs:
   build:
     runs-on: ubuntu-latest

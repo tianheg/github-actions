@@ -1,0 +1,64 @@
+name: Send email
+description: Send an email to multiple recipients
+author: dawidd6
+branding:
+  icon: mail
+  color: blue
+inputs:
+  server_address:
+    description: SMTP server address
+    required: true
+  server_port:
+    description: SMTP server port
+    required: true
+  username:
+    description: Authenticate as this user to SMTP server
+    required: false
+  password:
+    description: Authenticate with this password to SMTP server
+    required: false
+  subject:
+    description: Subject of mail message
+    required: true
+  to:
+    description: Recipients mail addresses (separated with comma)
+    required: true
+  from:
+    description: Full name of mail sender (might be with an email address specified in <>)
+    required: true
+  secure:
+    description: Whether this connection use TLS (default is true if server_port is 465)
+    required: false
+  body:
+    description: Body of mail message (might be a filename prefixed with file:// to read from)
+    required: false
+  html_body:
+    description: HTML body of mail message (might be a filename prefixed with file:// to read from)
+    required: false
+  cc:
+    description: Carbon copy recipients (separated with comma)
+    required: false
+  bcc:
+    description: Blind carbon copy recipients (separated with comma)
+    required: false
+  reply_to:
+    description: An email address that will appear on the Reply-To field
+    required: false
+  in_reply_to:
+    description: The Message-ID this message is replying to
+    required: false
+  ignore_cert:
+    description: Allow unsigned/invalid certificates
+    required: false
+  convert_markdown:
+    description: Convert body from Markdown to HTML (set content_type input as text/html too)
+    required: false
+  attachments:
+    description: Files that will be added to mail message attachments (separated with comma)
+    required: false
+  priority:
+    description: Set Priority level for the mail message to 'high', 'normal' (default) or 'low'
+    required: false
+runs:
+  using: node12
+  main: main.js

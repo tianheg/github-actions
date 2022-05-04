@@ -6,43 +6,45 @@
 - name: Send mail
   uses: tianheg/github-actions@mail
   with:
-    # Required mail server address:
-    server_address: smtp.gmail.com
-    # Required mail server port:
+    server_address: smtp.mailgun.org
     server_port: 465
-    # Optional (recommended): mail server username:
     username: ${{secrets.MAIL_USERNAME}}
-    # Optional (recommended) mail server password:
     password: ${{secrets.MAIL_PASSWORD}}
-    # Required mail subject:
     subject: Github Actions job result
-    # Required recipients' addresses:
     to: obiwan@example.com,yoda@example.com
-    # Required sender full name (address can be skipped):
     from: Luke Skywalker # <user@example.com>
-    # Optional whether this connection use TLS (default is true if server_port is 465)
-    secure: true
-    # Optional plain body:
     body: Build job of ${{github.repository}} completed successfully!
-    # Optional HTML body read from file:
     html_body: file://README.html
-    # Optional carbon copy recipients:
     cc: kyloren@example.com,leia@example.com
-    # Optional blind carbon copy recipients:
     bcc: r2d2@example.com,hansolo@example.com
-    # Optional recipient of the email response:
     reply_to: luke@example.com
-    # Optional Message ID this message is replying to:
     in_reply_to: <random-luke@example.com>
-    # Optional unsigned/invalid certificates allowance:
     ignore_cert: true
-    # Optional converting Markdown to HTML (set content_type to text/html too):
     convert_markdown: true
-    # Optional attachments:
     attachments: attachments.zip,git.diff,./dist/static/*.js
-    # Optional priority: 'high', 'normal' (default) or 'low'
     priority: low
 ```
+
+| Name                  | Requirement | Description |
+| --------------------- | ----------- | ----------- |
+| `server_address`        | _required_ | mail server address |
+| `server_port`        | _required_ | mail server port |
+| `username`           | _optional_ | (recommended) mail server username |
+| `password`            | _optional_ | (recommended) mail server password |
+| `subject`   | _required_ | mail subject |
+| `to`  | _required_ | recipients' addresses |
+| `from`           | _required_ | sender full name (address can be skipped) |
+| `secure`          | _optional_(true/false) | whether this connection use TLS (default is true if server_port is 465) |
+| `body` | _optional_ | plain body |
+| `html_body` | _optional_ | HTML body read from file |
+| `cc` | _optional_ | carbon copy recipients |
+| `bcc` | _optional_ | blind carbon copy recipients |
+| `reply_to` | _optional_ | recipient of the email response |
+| `in_reply_to` | _optional_ | Message ID this message is replying to |
+| ` ignore_cert` | _optional_(true/false) | unsigned/invalid certificates allowance |
+| `convert_markdown` | _optional_ | converting Markdown to HTML (set content_type to text/html too) |
+| `attachments` | _optional_ |  |
+| `priority` | _optional_ | priority: 'high', 'normal' (default) or 'low' |
 
 ---
 
